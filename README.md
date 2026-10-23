@@ -28,6 +28,10 @@
 
 > 说明：右侧边栏的 **Packages** 是 GitHub 用来存放容器镜像、npm / NuGet 包的地方，本项目不用它，
 > 所以那里是空的。软件下载请走上面的 **Releases**，或直接取仓库里的 exe。
+>
+> Release 页面里的 **Source code (zip)** / **Source code (tar.gz)** 是 GitHub 给每个版本自动生成的
+> 仓库快照（无法关闭，也删不掉），里面就是本仓库这 7 个文件 —— **不含任何源码**，
+> 本项目源码不公开。想下载软件请点 `OptiRoll-2.1.0.zip`。
 
 ---
 
