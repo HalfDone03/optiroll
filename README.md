@@ -10,8 +10,24 @@
 
 ## 下载
 
-直接取本目录下的 `OptiRoll.exe` 双击即可 —— 单文件、免安装、不依赖运行库
-（使用系统自带的 .NET Framework 4.x）。需要管理员权限，不是管理员启动时会提示并可一键提权重启。
+### 方式一：Release（推荐）
+
+**[⬇ 下载 OptiRoll-2.1.0.zip](https://github.com/HalfDone03/optiroll/releases/download/v2.1.0/OptiRoll-2.1.0.zip)**（448 KB）
+
+解压后双击 `OptiRoll.exe`。也可以到 [Releases 页面](https://github.com/HalfDone03/optiroll/releases) 自行选择版本。
+
+### 方式二：直接取仓库里的单文件
+
+不想要压缩包的话，点开仓库里的 **[OptiRoll.exe](https://github.com/HalfDone03/optiroll/raw/main/OptiRoll.exe)**（1.6 MB），
+在页面右上角点 **Download raw file** 即可，下载下来就能双击运行。
+
+### 运行要求
+
+单文件、免安装、不依赖运行库（用系统自带的 .NET Framework 4.x），Windows 10 / 11 64 位。
+需要管理员权限 —— 不是管理员启动时程序会提示，并可一键提权重启。
+
+> 说明：右侧边栏的 **Packages** 是 GitHub 用来存放容器镜像、npm / NuGet 包的地方，本项目不用它，
+> 所以那里是空的。软件下载请走上面的 **Releases**，或直接取仓库里的 exe。
 
 ---
 
