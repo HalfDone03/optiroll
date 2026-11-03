@@ -24,7 +24,7 @@
 ### 方式二：仓库里直接取 exe
 
 不想进 Releases 的话，点仓库根目录的 **[OptiRoll.exe](https://github.com/HalfDone03/optiroll/raw/main/OptiRoll.exe)**，
-在页面右上角点 **Download raw file** 即可（约 66 MB）。
+在页面右上角点 **Download raw file** 即可（约 71 MB）。
 
 ### 运行要求
 
