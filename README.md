@@ -462,7 +462,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File backend\invoke.ps1 ^
 
 `in.json` 写 `{}`，结果看 `out.json` 的 `ok` 与 `data`，日志看 `log.txt`。
 
-当前接线的规模：前端脚本里出现的 **185 个 action 全部有后端或主进程处理端**；45 个功能页 + `combo.js` 组合层 + 5 个壳脚本（`app.js`/`nav.js`/`ui.js`/`preload.js`/`main.js`）与 `tools/` 下的排查脚本共 **56 个 js 文件 `node --check` 全通过**；**33 个 PowerShell 文件**全部带 UTF-8 BOM 且 `Parser::ParseFile` 零错误。
+当前接线的规模：前端脚本里出现的**动作名全部有后端或主进程处理端**（回归 C1 逐一核对 **86 个**）；45 个功能页 + `combo.js` 组合层 + 5 个壳脚本（`app.js`/`nav.js`/`ui.js`/`preload.js`/`main.js`）与 `tools/` 下的排查脚本共 **58 个 js 文件 `node --check` 全通过**；**36 个 PowerShell 文件**全部带 UTF-8 BOM、统一 LF、`Parser::ParseFile` 零错误。
 
 `docs\preview\` 里的 22 张截图可用无头 Edge 重新生成：
 
