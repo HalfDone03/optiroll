@@ -1,6 +1,6 @@
 # OptiRoll · HalfDone 1.4.4
 
-由 HalfDone 开发的 OptiRoll：把原版 2.1.0 的优化引擎与本机调校能力做成一个桌面程序，共 **43 个页面**。技术栈：Electron 壳 + 纯浏览器 JS 界面 + PowerShell 后端。没有前端构建步骤，没有第三方运行时库，改完直接跑。
+由 HalfDone 开发的 OptiRoll：把原版 2.1.0 的优化引擎与本机调校能力做成一个桌面程序，共 **12 个入口、43 个功能页**。技术栈：Electron 壳 + 纯浏览器 JS 界面 + PowerShell 后端。没有前端构建步骤，没有第三方运行时库，改完直接跑。
 
 ---
 
@@ -104,10 +104,10 @@ OptiRoll/
 ├─ src/
 │  ├─ index.html               壳：标题栏 + 侧栏 + 主内容区
 │  ├─ style.css                全部设计令牌与组件样式
-│  ├─ nav.js                   九组 43 页导航 + 内联 SVG 图标
+│  ├─ nav.js                   五组 12 个入口 + 内联 SVG 图标
 │  ├─ ui.js                    30 个组件 + MOCK 数据 + bridge + runAction
 │  ├─ app.js                   路由（location.hash）与标题栏行为
-│  └─ pages/                   43 个页面，一页一文件
+│  └─ pages/                   43 个功能页，一页一文件（combo.js 把功能页组合成 12 个入口）
 ├─ backend/
 │  ├─ invoke.ps1               唯一入口：-Action / -PayloadFile / -OutFile / -LogFile
 │  ├─ common.ps1               日志、结果 JSON、备份目录、撤销脚本生成、注册表读写
@@ -146,9 +146,9 @@ OptiRoll/
 
 ---
 
-## 三、43 个页面
+## 三、12 个入口 · 43 个功能页
 
-左侧导航分 8 组，顺序即下表：概览 / 优化 / 显卡与游戏 / 监控与硬件 / 软件与工具 / 系统与安全 / 回滚与日志 / 设置与支持。
+左侧导航分 5 组、共 12 个入口：概览 / 优化与游戏 / 检测与维护 / 系统与安全 / 记录与设置。功能页有 43 个，入口页里用顶部标签栏切换——标签栏吸顶常驻，滚动时不会消失，切走的页面会先执行自己的清理（停轮询、停定时器）再卸载，切回来重新取数。老地址（如 `#oneclick`）与页面内的跳转按钮会自动落到对应的入口 + 标签，不会失效。下表「路由」一列是功能页 id，点开它所在的入口后选同名标签即可；`#入口id` 直达入口，`#功能页id` 直达并自动选中该标签。
 
 | 页面 | 路由 | 内容 |
 | --- | --- | --- |
@@ -425,7 +425,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools\test-all.ps1
 
 | 段 | 内容 |
 | --- | --- |
-| A | 55 个 js 文件 `node --check` |
+| A | 56 个 js 文件 `node --check` |
 | B | 21 个 ps1：UTF-8 BOM（且无双重 BOM）+ `Parser::ParseFile` 零错误 |
 | C | 渲染层调用的 185 个 action 全部能反查到处理端（后端 ps1 或主进程） |
 | D | 撤销链路 35 项断言（`backend\_test-undo.ps1`） |
@@ -461,7 +461,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File backend\invoke.ps1 ^
 
 `in.json` 写 `{}`，结果看 `out.json` 的 `ok` 与 `data`，日志看 `log.txt`。
 
-当前接线的规模：前端脚本里出现的 **185 个 action 全部有后端或主进程处理端**；43 个页面 + 5 个壳脚本（`app.js`/`nav.js`/`ui.js`/`preload.js`/`main.js`）与 `tools/` 下的排查脚本共 **55 个 js 文件 `node --check` 全通过**；**33 个 PowerShell 文件**全部带 UTF-8 BOM 且 `Parser::ParseFile` 零错误。
+当前接线的规模：前端脚本里出现的 **185 个 action 全部有后端或主进程处理端**；43 个功能页 + `combo.js` 组合层 + 5 个壳脚本（`app.js`/`nav.js`/`ui.js`/`preload.js`/`main.js`）与 `tools/` 下的排查脚本共 **56 个 js 文件 `node --check` 全通过**；**33 个 PowerShell 文件**全部带 UTF-8 BOM 且 `Parser::ParseFile` 零错误。
 
 `docs\preview\` 里的 22 张截图可用无头 Edge 重新生成：
 
