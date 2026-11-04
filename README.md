@@ -1,6 +1,6 @@
 # OptiRoll · HalfDone 1.5.0
 
-由 HalfDone 开发的 OptiRoll：把原版 2.1.0 的优化引擎与本机调校能力做成一个桌面程序，共 **16 个入口、43 个功能页**。技术栈：Electron 壳 + 纯浏览器 JS 界面 + PowerShell 后端。没有前端构建步骤，没有第三方运行时库，改完直接跑。
+由 HalfDone 开发的 OptiRoll：把原版 2.1.0 的优化引擎与本机调校能力做成一个桌面程序，共 **16 个入口、44 个功能页**。技术栈：Electron 壳 + 纯浏览器 JS 界面 + PowerShell 后端。没有前端构建步骤，没有第三方运行时库，改完直接跑。
 
 ---
 
@@ -107,7 +107,7 @@ OptiRoll/
 │  ├─ nav.js                   六组 16 个入口 + 内联 SVG 图标
 │  ├─ ui.js                    30 个组件 + MOCK 数据 + bridge + runAction
 │  ├─ app.js                   路由（location.hash）与标题栏行为
-│  └─ pages/                   43 个功能页，一页一文件（combo.js 把功能页组合成 10 个入口，另有 4 页独立成项）
+│  └─ pages/                   44 个功能页，一页一文件（combo.js 把功能页组合成 10 个入口，另有 4 页独立成项）
 ├─ backend/
 │  ├─ invoke.ps1               唯一入口：-Action / -PayloadFile / -OutFile / -LogFile
 │  ├─ common.ps1               日志、结果 JSON、备份目录、撤销脚本生成、注册表读写
@@ -146,7 +146,7 @@ OptiRoll/
 
 ---
 
-## 三、16 个入口 · 43 个功能页
+## 三、16 个入口 · 44 个功能页
 
 左侧导航分 6 组、共 16 个入口：概览 / 优化与游戏 / 检测与维护 / 软件与文件 / 系统与安全 / 记录与设置。实时监控、应用商店、启动项管理、捐赠支持四项不再折进组合，单独占一格。功能页有 43 个，入口页里用顶部标签栏切换——标签栏吸顶常驻，滚动时不会消失，切走的页面会先执行自己的清理（停轮询、停定时器）再卸载，切回来重新取数。老地址（如 `#oneclick`）与页面内的跳转按钮会自动落到对应的入口 + 标签，不会失效。下表「路由」一列是功能页 id，点开它所在的入口后选同名标签即可；`#入口id` 直达入口，`#功能页id` 直达并自动选中该标签。
 
@@ -154,6 +154,7 @@ OptiRoll/
 | --- | --- | --- |
 | 概览 | `#home` | 健康度评分、执行前预检、CPU/内存/GPU/温度、本机信息、安全检查 |
 | 一键优化 | `#oneclick` | 47 个开关，分 7 组（性能 / 隐私 / 网络 / 清理 / 应用 / 运行库 / 微调），三档位、进度与中止、执行前创建还原点 |
+| 一键方案 | `#preset` | 三档预设（保守 10 项 / 推荐 25 项 / 彻底 29 项）一次配好，带「套用 / 还原」；逐项可单独开关，改完就进撤销；另一张卡专管 AI 组件（Copilot、回顾、Click to Do、WSAIFabricSvc） |
 | 系统优化 | `#sysopt` | 4 个标签页共 8 项，SysMain / WSearch 为受保护项，界面锁死不可改 |
 | 深度优化 | `#deepopt` | **159 项**：8 个自写项 + 原版数据 151 条（7 个分类），其中 27 条命中黑名单被锁死（见第六节），可逐条挑、可选「还原所选」 |
 | 系统精简 | `#debloat` | 33 个开关，分 4 组（隐私与建议 / 界面精简 / 后台与更新 / 预装应用），对标 Win11Debloat：关遥测与广告 ID、收任务栏与经典右键菜单、卸预装应用，三档位可选，每项都留回滚命令 |
@@ -461,7 +462,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File backend\invoke.ps1 ^
 
 `in.json` 写 `{}`，结果看 `out.json` 的 `ok` 与 `data`，日志看 `log.txt`。
 
-当前接线的规模：前端脚本里出现的 **185 个 action 全部有后端或主进程处理端**；43 个功能页 + `combo.js` 组合层 + 5 个壳脚本（`app.js`/`nav.js`/`ui.js`/`preload.js`/`main.js`）与 `tools/` 下的排查脚本共 **56 个 js 文件 `node --check` 全通过**；**33 个 PowerShell 文件**全部带 UTF-8 BOM 且 `Parser::ParseFile` 零错误。
+当前接线的规模：前端脚本里出现的 **185 个 action 全部有后端或主进程处理端**；44 个功能页 + `combo.js` 组合层 + 5 个壳脚本（`app.js`/`nav.js`/`ui.js`/`preload.js`/`main.js`）与 `tools/` 下的排查脚本共 **56 个 js 文件 `node --check` 全通过**；**33 个 PowerShell 文件**全部带 UTF-8 BOM 且 `Parser::ParseFile` 零错误。
 
 `docs\preview\` 里的 22 张截图可用无头 Edge 重新生成：
 
