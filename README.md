@@ -1,4 +1,4 @@
-# OptiRoll · HalfDone 1.5.1
+# OptiRoll · HalfDone 1.5.2
 
 把系统优化、显卡与游戏调优、硬件体检、文件与磁盘工具收进一个桌面程序。Electron 外壳 + 纯浏览器 JS 界面 + PowerShell 后端：没有前端构建步骤，没有第三方 UI 库，改完直接跑。
 
@@ -251,7 +251,7 @@ OptiRoll/
 
 ## 七、与原版的差异
 
-| 维度 | 原工具箱 2.1.0 | HalfDone 1.5.1 |
+| 维度 | 原工具箱 2.1.0 | HalfDone 1.5.2 |
 | --- | --- | --- |
 | 形态 | 单 exe（WinForms + 内嵌 PowerShell） | Electron 桌面程序（界面 JS + 后端 PowerShell） |
 | 界面 | WinForms 窗体 | 网页界面，石墨深色 + 冰青强调，17 入口 45 功能页 |
