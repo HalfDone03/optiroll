@@ -3,7 +3,7 @@
 Windows 优化工具箱。优化、显卡调优、硬件体检、清理与磁盘、灯效控制，收在一个桌面程序里。
 每项改动都留回滚记录，危险的先弹确认，能进回收站的绝不直接删。
 
-**本仓库只放打包好的程序，不放源码。** 源码在 [optiroll-source](https://github.com/HalfDone03/optiroll-source)。
+**本仓库只放打包好的程序。**
 
 ![一键优化](docs/oneclick.png)
 
@@ -89,5 +89,3 @@ Windows 优化工具箱。优化、显卡调优、硬件体检、清理与磁盘
 ## 说明
 
 本工具直接改系统设置，误用有风险。用于自己的机器，后果自负。
-
-源码、构建方式、自检脚本：见 [optiroll-source](https://github.com/HalfDone03/optiroll-source)。
