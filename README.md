@@ -1,11 +1,11 @@
 # OptiRoll · HalfDone 1.6.2
 
 Windows 优化工具箱。优化、显卡调优、硬件体检、清理与磁盘、灯效控制，收在一个桌面程序里。
-每一项改动都留回滚记录，危险的先弹确认，能进回收站的绝不直接删。
+每项改动都留回滚记录，危险的先弹确认，能进回收站的绝不直接删。
 
 **本仓库只放打包好的程序，不放源码。** 源码在 [optiroll-source](https://github.com/HalfDone03/optiroll-source)。
 
-![总览](docs/overview.png)
+![一键优化](docs/oneclick.png)
 
 ---
 
@@ -46,9 +46,7 @@ Windows 优化工具箱。优化、显卡调优、硬件体检、清理与磁盘
 | 回滚与日志 | 撤销与恢复、系统还原、运行日志 |
 | 设置与配置 | 主题配色、毛玻璃档位、数据目录、配置导出 |
 
-![一键优化](docs/oneclick.png)
-
-![灯效控制](docs/led.png)
+![维修工具](docs/repair.png)
 
 ---
 
@@ -80,7 +78,7 @@ Windows 优化工具箱。优化、显卡调优、硬件体检、清理与磁盘
 
 程序里「设置 → 检查更新」会读本仓库的 Releases，比对版本号后提示。
 
-各版本改动见 [Releases](https://github.com/HalfDone03/optiroll/releases) 与 [CHANGELOG.md](CHANGELOG.md)。
+各版本重要改动见 [Releases](https://github.com/HalfDone03/optiroll/releases) 与 [CHANGELOG.md](CHANGELOG.md)。
 
 ---
 
